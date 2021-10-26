@@ -1,0 +1,46 @@
+#include<iostream>
+#include<string.h>
+#pragma warning (disable:4996)
+using namespace std;
+
+void replaceWord(char* s, const char* oldW,const char* newW){
+    int i;
+
+    for (i = 0; s[i]; i++) {
+        if (s[i ] == ' ' && s[i+1] ==oldW[0] && s[i+2] == oldW[1] && s[i+3] == oldW[2] && s[i +4] == ' ') {
+
+            for (int a = 0; newW[a]; a++,i++) {
+
+
+                s[i] = newW[a];
+
+
+            }
+
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+}
+int main() {
+    char text[100] = "This is C++ lab, C++ is harder than java";
+    
+    cout << strlen(text) << endl;//40
+    replaceWord(text, "C++", "C/C++");
+
+    cout << text<<endl;
+        cout << strlen(text) << endl;//This is C/C++ lab, C/C++ is harder thanjava
+
+
+
+    return 0;
+}
